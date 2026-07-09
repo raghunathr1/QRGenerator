@@ -1,5 +1,5 @@
 import QRCode from "qrcode";
-import Certificate from "../models/Certificate.js";
+import certificate from "../models/certificate.js";
 
 export const createCertificate = async (req, res) => {
   try {

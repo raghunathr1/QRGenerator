@@ -1,5 +1,5 @@
 import QRCode from "qrcode";
-import certificate from "../models/certificate.js";
+import Certificate from "../models/certificate.js";
 
 export const createCertificate = async (req, res) => {
   try {
@@ -23,7 +23,7 @@ export const createCertificate = async (req, res) => {
     const certificateId = `KCL-${year}-${String(nextNumber).padStart(3, "0")}`;
 
     // Verification URL
-    const verificationURL = `http://localhost:5173/verify/${certificateId}`;
+    const verificationURL = `https://qr-generator-chi-rosy.vercel.app/verify/${certificateId}`;
 
     // QR Code
     const qrCode = await QRCode.toDataURL(verificationURL);
